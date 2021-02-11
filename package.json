@@ -1,0 +1,27 @@
+{
+  "name": "tsriddles",
+  "version": "1.0.0",
+  "description": "TypeScript Riddles",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --check 'src/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrDesjardins/TSRiddles.git"
+  },
+  "keywords": [
+    "typescript",
+    "riddle",
+    "snippet"
+  ],
+  "author": "Patrick Desjardins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrDesjardins/TSRiddles/issues"
+  },
+  "homepage": "https://github.com/MrDesjardins/TSRiddles#readme",
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}
