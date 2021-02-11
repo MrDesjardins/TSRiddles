@@ -26,8 +26,8 @@ namespace riddle1 {
   /*
     Solution Half-Generic
   */
-  function extractBasicProperty<T extends keyof IObject>(obj: IObject, key: T) {
-    const data = obj[key];
+  function extractBasicProperty<T extends keyof IObject>(obj: IObject, key: T): IObject[T] {
+    const data: IObject[T] = obj[key];
     return data;
   }
   const b1: string = extractBasicProperty(myObj, "m1");
