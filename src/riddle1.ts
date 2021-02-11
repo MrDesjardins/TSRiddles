@@ -14,6 +14,16 @@ namespace riddle1 {
     m3: true,
   };
   /*
+    Solution Not Generic
+  */
+  function extractBasicPropertyNonGeneric<T extends keyof IObject>(obj: IObject, key: string) {
+    const data = obj[key];
+    return data;
+  }
+  const a1: string = extractBasicPropertyNonGeneric(myObj, "m1");
+  const a2: number = extractBasicPropertyNonGeneric(myObj, "m2");
+  const a3: boolean = extractBasicPropertyNonGeneric(myObj, "m3");
+  /*
     Solution Half-Generic
   */
   function extractBasicProperty<T extends keyof IObject>(obj: IObject, key: T) {
