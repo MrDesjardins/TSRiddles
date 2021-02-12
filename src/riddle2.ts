@@ -16,4 +16,10 @@ namespace riddle2 {
   type GenericType1 = Child1 extends BaseClass<infer I> ? I : never; // String
   type GenericType2 = Child2 extends BaseClass<infer I> ? I : never; // Number
   type GenericType3 = Child3 extends BaseClass<infer I> ? I : never; // Never
+  
+  /*
+   Does not need to be never, could be anything
+  */
+  class Child4 extends Object {} // Won't work
+  type GenericType4 = Child4 extends BaseClass<infer I> ? I : unknown; // Unknown
 }
