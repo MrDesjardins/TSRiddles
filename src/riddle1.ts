@@ -27,6 +27,7 @@ namespace riddle1 {
   const a1: string = extractFromIObject(myObj, "m1");
   const a2: number = extractFromIObject(myObj, "m2");
   const a3: boolean = extractFromIObject(myObj, "m3");
+
   /*
     Solution Half-Generic
   */
@@ -34,7 +35,7 @@ namespace riddle1 {
     obj: IObject,
     key: T
   ): IObject[T] {
-    const data = obj[key];
+    const data: IObject[T] = obj[key];
     return data;
   }
   const b1: string = extractBasicProperty(myObj, "m1");
