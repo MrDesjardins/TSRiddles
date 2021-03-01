@@ -13,20 +13,28 @@ namespace riddle1 {
     m2: 2,
     m3: true,
   };
+
   /*
-    Solution Not Generic
+    Solution With some flaws
   */
-  function extractBasicPropertyNonGeneric(obj: IObject, key: string): any {
-    const data = obj[key];
+  function extractFromIObject(
+    obj: IObject,
+    property: string
+  ): any {
+    const data = obj[property];
     return data;
   }
-  const a1 = extractBasicPropertyNonGeneric(myObj, "m1");
-  const a2 = extractBasicPropertyNonGeneric(myObj, "m2");
-  const a3 = extractBasicPropertyNonGeneric(myObj, "m3");
+  const a1: string = extractFromIObject(myObj, "m1");
+  const a2: number = extractFromIObject(myObj, "m2");
+  const a3: boolean = extractFromIObject(myObj, "m3");
+
   /*
     Solution Half-Generic
   */
-  function extractBasicProperty<T extends keyof IObject>(obj: IObject, key: T): IObject[T] {
+  function extractBasicProperty<T extends keyof IObject>(
+    obj: IObject,
+    key: T
+  ): IObject[T] {
     const data: IObject[T] = obj[key];
     return data;
   }
@@ -36,7 +44,10 @@ namespace riddle1 {
   /*
     Solution Generic
   */
-  function extractProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  function extractProperty<T, K extends keyof T>(
+    obj: T,
+    key: K
+  ): T[K] {
     const data: T[K] = obj[key];
     return data;
   }

@@ -22,4 +22,3 @@ namespace riddle2 {
   */
   class Child4 extends Object {} // Won't work
   type GenericType4 = Child4 extends BaseClass<infer I> ? I : unknown; // Unknown
-}

@@ -9,7 +9,8 @@ namespace riddle3 {
   /*
     Solution: extends array with infer 
   */
-  type ArrayTypes<T> = T extends Array<infer U> ? U : never; // Could be (infer U)[]
+  type ArrayTypes<T> = T extends Array<infer U> ? U : never;
+  type ArrayTypes2<T> = T extends (infer U)[] ? U : never;
   type TypeArray1 = ArrayTypes<typeof array1>; // string, number, boolean
   type TypePrimitive = ArrayTypes<typeof primitive>; // never
 }
